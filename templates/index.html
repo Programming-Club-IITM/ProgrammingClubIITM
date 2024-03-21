@@ -55,6 +55,8 @@
          content to avoid any CSS collisions with our real content. -->
     <div class="wrap">
 
+      {% block bigblock %}
+
       {% block masthead %}
       {{ macros::masthead(current_url=config.base_url) }}
       {% endblock masthead %}
@@ -69,6 +71,8 @@
         {% endblock content %}
 
       </div>
+
+      {% endblock bigblock %}
     </div>
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>

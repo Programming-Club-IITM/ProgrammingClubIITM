@@ -135,7 +135,7 @@ tag_page = "/tags/"
 category_page = "/categories/"
 
 # hero
-image = "/img/curiosity_by_starsinmyfingertips_dakioyj-fullview.jpg"                                                                                                                                                                                   # image for the home page
+image = "/img/banner.png"                                                                                                                                                                                                                              # image for the home page
 caption = "Built using <a href=\"https://www.getzola.org/\">Zola</a> using the <a href=\"https://codinfox-zola.vercel.app/\">codinfox-zola</a> theme. &copy; <a href=\"https://www.programmingclubiitm.com\">2024 - present Programming Club IITM</a>" # caption for the home page image
 #
 

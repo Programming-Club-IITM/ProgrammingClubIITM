@@ -29,3 +29,7 @@ path = "/tags/"
 [[nav]]
 name = "About"
 path = "/about/"
+
+[[nav]]
+name = "Gallery"
+path = "/gallery/"
