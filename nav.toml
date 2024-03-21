@@ -15,21 +15,17 @@ path = "/"
 [[nav]]
 name = "Blog"
 path = "/blog/"
-haschild = true  # Blog is a section with submenu navigation items
+haschild = true # Blog is a section with submenu navigation items
 
-  # sub-items of the Blog section
-  [[nav.sub]]
-  name = "Categories"
-  path = "/categories/"
+# sub-items of the Blog section
+[[nav.sub]]
+name = "Categories"
+path = "/categories/"
 
-  [[nav.sub]]
-  name = "Tags"
-  path = "/tags/"
+[[nav.sub]]
+name = "Tags"
+path = "/tags/"
 
 [[nav]]
 name = "About"
 path = "/about/"
-
-[[nav]]
-name = "Github Project"
-path = "https://github.com/svavs/codinfox-zola"
