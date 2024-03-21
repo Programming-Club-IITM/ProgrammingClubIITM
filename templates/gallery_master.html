@@ -1,0 +1,15 @@
+{% extends "index.html" %} {% block content %}
+<div>
+  {% for post in section.pages %}
+  <a href="{{ post.permalink }}"
+    ><div style="display: block; margin: auto; width: 90%; margin-bottom: 3rem">
+      <img src="{{post.extra.header_img}}" /><span
+        style="text-align: center; width: auto"
+        >{{ post.title }}</span
+      >
+    </div></a
+  >
+  {% endfor %}
+</div>
+
+{% endblock content %}
