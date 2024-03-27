@@ -1,72 +1,63 @@
-# Codinfox-Zola
+# How to go about this
 
-![Zola Deploy to Github Pages on push](https://github.com/svavs/codinfox-zola/workflows/Zola%20Deploy%20to%20Pages%20on%20push/badge.svg?branch=master)
+The following few steps will explain how to go around the repo.
 
-This is a [Zola](https://www.getzola.com) theme inspired to [Codinfox-Lanyon](https://codinfox.github.com/), a Lanyon based theme for [Jekyll](http://jekyllrb.com). See a live demo [here](https://codinfox-zola.vercel.app/).
+repo tree
 
-This theme places content first by tucking away navigation in a hidden drawer.
+```
+.
+├── content
+│   ├── about.md
+│   ├── blog
+│   └── gallery
+├── sass
+│   ├── base
+│   ├── bourbon
+│   │   ├── addons
+│   │   ├── css3
+│   │   ├── functions
+│   │   ├── helpers
+│   │   └── settings
+│   └── component
+├── static
+│   ├── gallery
+│   │   ├── 2023
+│   │   └── 2024
+│   ├── img
+│   ├── processed_images
+│   └── projects
+│       ├── 2023
+│       └── 2024
+└── templates
+    ├── categories
+    ├── macros
+    └── tags
 
-* Built for [Zola](https://www.getzola.com)
-* Developed on GitHub and hosted for free on [GitHub Pages](https://pages.github.com) and [Vercel](https://vercel.com)
-* Coded with [Spacemacs](https://www.spacemacs.org)
+```
 
-This theme supports:
+## Content
 
-1. Theme colors: you can choose your favorite theme color (changing in `_config.scss`)
-2. Changable sidebar locations (reverse it by changing the boolean value in `_config.scss`)
-3. Integration of FontAwesome, MathJax, Disqus and Google Analytics
-4. Support for multilingual sites
-5. Support for Gravatar
-6. and numerous improvements over original Lanyon and Codinfox-Lanyon
+- `about.md` contains info about our club and is exposed in the sidebar on the
+  website.
 
-All the configuration variables and their meaning are inside:
+- `blog` contains, well, blogs. Info about events and stuff. Can hold CP
+  articles as well.
 
-- `config.toml` (for the zola config variables and some extra variables required by this theme),
-- `author.toml` (for the personal informations to be displayed about the author of the site),
-- `nav.toml` (for the navigation menu structure available in the site's sidebar)
-- `_config.scss` (for the definition of some css customizations)
+- `gallery` you can take a guess as to what it does. Check the example on how
+  to add images in it. It fetches images assuming `/static` as the root dir.
 
-The options are fairly straightforward and described in comments.
+## sass
 
-Learn more and contribute on [GitHub](https://github.com/svavs/codinfox-zola).
+Pretty much useless if you are happy with the current colour scheme/animations/
+widths anol. Figure it out for yourself if interested.
 
-Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/svavs/codinfox-zola/issues/new) or [ask me on Twitter](https://twitter.com/svavs).
+## static
 
-### Before you start
+Holds the static content. For most part prefer to put the images and other
+stuff here.
 
-[Get a gravatar account](https://gravatar.com) and set this up with a profile image.
+## templates
 
-#### Add gravatar profile image to codinfox-zola theme
-
-1. login to gravatar.com
-2. click My Profile
-3. click **view profile** in RH sidebar beneath profile name
-4. click JSON
-5. copy the `hash` value on line 4
-6. paste the `hash` value to `author.toml` line 10
-
-
-### Install and use
-
-To use this theme you can follow the instruction required by any Zola theme.
-
-Simply clone this repository under the `themes` folder of your site's main folder.
-
-Then, define the required extra variables in the config.toml (take it from the config.toml file of the theme), create and define the author.toml and nav.toml configuration files in the main folder of your site (the same level of the config.toml), and that's it!
-
-To define your own home picture, put an image file in the `static/img/` folder and set the path in the config.extra.image variable.
-
-Now is possible to create the content inside the `content` folder as usual for Zola sites.
-
-If you want to have a Blog with this theme, then create a folder inside the `content` folder containing all the blog posts in Markdown format. Zola automatically generate a section that you can manage as a blog. See an example in the [live demo](https://codinfox-zola.vercel.app/blog/).
-
-
- 
-## License
-
-Open sourced under the [MIT license](LICENSE.md).
-
-
-## TODO
- - recaptcha for hiding email address link (https://developers.google.com/recaptcha/intro)
- - hidden multilingual links in topbar for main index section pages
+Uses the Tera templating engine. Pages are generated based on these templates.
+Mostly shouldn't be needed to be touched, unless of course you want to edit
+some inline css.
