@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "http://programmingclubiitm.com"
+base_url = "https://programming-club-iitm.github.io"
 
 title = "Programming Club IITM"
 description = "We dream in algorithms"
