@@ -1,37 +1,22 @@
-{% extends "index.html" %} 
-
-{% block pagetitle %} 
-{{ head::titlesite(page_title = page.title) }} 
-{% endblock pagetitle %} 
-
-{% block masthead %} 
-{{ macros::masthead(current_url=page.permalink) }} 
-{% endblock masthead %} 
-
-{% block navigation_list %} 
-{{ sidebar::nav(navlist = sidebar_nav.nav, page_permalink = page.permalink) }}  
-{% endblock navigation_list %} 
-
-{% block bigblock %}
-
-{% block content %}
-<div class="page" style="margin-left: 20rem; margin-top: 1rem">
+{% extends "index.html" %} {% block pagetitle %} {{ head::titlesite(page_title =
+page.title) }} {% endblock pagetitle %} {% block masthead %} {{
+macros::masthead(current_url=page.permalink) }} {% endblock masthead %} {% block
+navigation_list %} {{ sidebar::nav(navlist = sidebar_nav.nav, page_permalink =
+page.permalink) }} {% endblock navigation_list %} {% block bigblock %} {% block
+content %}
+<div class="page" style="margin-left: 20vw; margin-top: 1rem">
   <h1 class="page-title">{{ page.title }}</h1>
 </div>
 {% endblock content %}
 
- <div class = "container_gallery" style="display: flex; flex-wrap: wrap">
-  {% for asset in page.extra.pics -%}
-    {%- if asset is matching("[.](jpg|png)$") -%} 
-      {% set image = resize_image(path=asset, width=600, op="fit_width") %}
-      <div style="margin: 10px">
-      <a href="{{ get_url(path=asset) }}" target="_blank">
-        <img src="{{ image.url }}" />
-      </a>
-      </div>
-    {%- endif %} 
-  {%- endfor %}
+<div class="container_gallery" style="display: flex; flex-wrap: wrap">
+  {% for asset in page.extra.pics -%} {%- if asset is matching("[.](jpg|png)$")
+  -%} {% set image = resize_image(path=asset, width=600, op="fit_width") %}
+  <div style="margin: 10px">
+    <a href="{{ get_url(path=asset) }}" target="_blank">
+      <img src="{{ image.url }}" />
+    </a>
+  </div>
+  {%- endif %} {%- endfor %}
 </div>
 {% endblock bigblock %}
-
-
